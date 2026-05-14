@@ -86,9 +86,45 @@ function exercicio2() {
 
 function exercicio3() {
   // TODO: ler o input
+  const input = document.getElementById("input-filme");
+
   // TODO: validar campo vazio
+  const nomeFilme = input.value.trim();
+
+  if (nomeFilme === "") {
+    alert("Digite o nome do filme!");
+    return;
+  }
   // TODO: criar o <li>
+  const li = document.createElement("li");
+
+  const btnRemover = document.createElement("button");
+
+  btnRemover.textContent = "🗑️ Remover";
+
+  btnRemover.onclick = function () {
+    this.parentElement.remove()
+  };
+
+  li.appendChild(span);
+
+  li.appendChild(btnRemover);
+
+    const lista = document.getElementById("minha-lista");
+
+    lista.appendChild(li);
+
+    input.value = "";
+
+    input.focus();
+
+    console.log("Adicionado:", nomeFilme, "Total:", lista.children.length);
+
+    li.classList.add("item-novo");
   // TODO: criar o <span> com o nome
+    const span = document.createElement("span");
+
+    span.textContent = "🎬" + nomeFilme;
   // TODO: criar o botão remover
   // TODO: montar estrutura e adicionar na lista
   // TODO: limpar input e devolver foco
